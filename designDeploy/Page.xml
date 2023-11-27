@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object shortName="page" displayName="Page" obName="Page">
+	<description>Page à traduire</description>
+	<attribute id="id" name="identifiant" nullable="NO" isKey="YES" autoincrement="YES" type="int" >
+		<description>Identifiant système</description>
+	</attribute>
+	<attribute id="label" name="nom" nullable="NO" type="varchar(255)" >
+		<description>Nom de la page</description>
+	</attribute>
+	<attribute id="path" name="chemin" nullable="YES" type="varchar(4000)" >
+		<description>chemin de la page pour contrôle de sécurité</description>
+	</attribute>
+	<attribute id="app_id" name="application" nullable="NO" type="int" referencedObject="Application" access="default" display="name" >
+		<description>Lien vers l'application</description>
+	</attribute>
+</object>

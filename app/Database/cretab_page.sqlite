@@ -1,0 +1,14 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_page.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE page (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	label varchar(255) NOT NULL , 
+	path varchar(4000) , 
+	app_id integer NOT NULL 
+);
+
+
+

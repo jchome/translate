@@ -1,0 +1,13 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_tagoncontent.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE tag_content (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	tag_id integer NOT NULL , 
+	content_id integer NOT NULL 
+);
+
+
+

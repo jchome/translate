@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object shortName="translate" displayName="Traduction" obName="Translation">
+	<description>Traduction d'un élément de page dans une langue</description>
+	<attribute id="id" name="identifiant" nullable="NO" isKey="YES" autoincrement="YES" type="int" >
+		<description>Identifiant système</description>
+	</attribute>
+	<attribute id="element_id" name="element" nullable="NO" type="int" referencedObject="Element" access="default" display="name" >
+		<description>Lien vers l'élément à traduire</description>
+	</attribute>
+	<attribute id="lang_id" name="langue" nullable="NO" type="int" referencedObject="Langue" access="default" display="label" >
+		<description>Lien vers la langue</description>
+	</attribute>
+	<attribute id="html" name="texte" nullable="YES" type="text(4000)" >
+		<description>Traduction pour le texte contenu dans l'élément</description>
+	</attribute>
+	<attribute id="alt" name="texte alternatif" nullable="YES" type="varchar(255)" >
+		<description>Texte apparaissant à la place d'une image non trouvée</description>
+	</attribute>
+	<attribute id="title" name="texte survol" nullable="YES" type="varchar(255)" >
+		<description>Texte apparaissant au survol par la souris</description>
+	</attribute>
+	<attribute id="src" name="source d'image" nullable="YES" type="varchar(4000)" >
+		<description>Lien http vers l'image traduite</description>
+	</attribute>
+</object>

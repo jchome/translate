@@ -1,0 +1,14 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_valueofparameter.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE param_value (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	parameter_id integer NOT NULL , 
+	order integer NOT NULL , 
+	value varchar(255) NOT NULL 
+);
+
+
+

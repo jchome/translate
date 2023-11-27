@@ -1,0 +1,15 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_tag.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE tag (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	category_id integer NOT NULL , 
+	label varchar(255) NOT NULL , 
+	archived char(1) , 
+	public char(1) NOT NULL 
+);
+
+
+

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<link href="api-main.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+<script language="javascript">
+$(document).ready(function () {
+	var height = $(window).height() - 50;
+	$('.scrollable').css('height', function(){ return height; });
+});
+$(window).resize(function(){
+	var height = $(window).height() - 50;
+	$('.scrollable').css('height', function(){ return height; });
+});
+</script>
+<body>
+<div class="pageContainer">
+
+	<div class="sidebar">
+		<h1>API</h1>
+		<div class="scrollable">
+			<h2><a href="#instanceVars">Variables d'instance</a></h2>
+			<ul>
+<li><a href="#id">id</a> : <i>int</i></li>
+				<li><a href="#title">title</a> : <i>varchar(255)</i></li>
+				<li><a href="#category_id">category_id</a> : <i>int</i></li>
+				<li><a href="#preview">preview</a> : <i>file</i></li>
+				<li><a href="#description">description</a> : <i>text(4000)</i></li>
+				<li><a href="#access_id">access_id</a> : <i>int</i></li>
+				<li><a href="#startDate">startDate</a> : <i>date(dd/mm/yyy)</i></li>
+				<li><a href="#endDate">endDate</a> : <i>date(dd/mm/yyy)</i></li>
+				<li><a href="#creationDate">creationDate</a> : <i>date(dd/mm/yyy)</i></li>
+				<li><a href="#interactive">interactive</a> : <i>flag</i></li>
+			</ul>
+			<h2><a href="#classVars">Variables de classe</a></h2>
+
+
+
+
+			<h2><a href="#instanceMethods">Méthodes d'instance</a></h2>
+			<ul>
+				<li><a href="#save">save()</a></li>
+				<li><a href="#update">update()</a></li>
+			</ul>
+			
+			
+			
+			<h2><a href="#classMethods">Méthodes de classe</a></h2>
+			<ul>
+				<li><a href="#Content_modelFromRow">Content_modelFromRow()</a></li>
+				<li><a href="#getAllContents">getAllContents()</a></li>
+				<li><a href="#getCountContents">getCountContents()</a></li>
+				<li><a href="#getContent">getContent()</a></li>
+				<li><a href="#delete">delete()</a></li>
+				<li><a href="#getAllByCriteria">getAllByCriteria()</a></li>
+				<li><a href="#countByCriteria">countByCriteria()</a></li>
+			</ul>
+			<h2><a href="#Copyright">Copyright</a></h2>
+		</div>
+	</div>
+	<div class="content">
+		<h1>Content_model</h1>
+		
+		
+		
+		<h2><a name="instanceVars" id="instanceVars">Variables d'instance</a></h2>
+<h3 class="api"><a name="id" id="id">id</a> : type <i>int</i></h3>
+			<div class="detail">
+				<p>identifiant système</p>
+			</div>
+
+			<h3 class="api"><a name="title" id="title">title</a> : type <i>varchar(255)</i></h3>
+			<div class="detail">
+				<p>Nom du contenu</p>
+			</div>
+
+			<h3 class="api"><a name="category_id" id="category_id">category_id</a> : type <i>int</i></h3>
+			<div class="detail">
+				<p>Lien vers la catégorie</p>
+			</div>
+
+			<h3 class="api"><a name="preview" id="preview">preview</a> : type <i>file</i></h3>
+			<div class="detail">
+				<p>Image d'aperçu</p>
+			</div>
+
+			<h3 class="api"><a name="description" id="description">description</a> : type <i>text(4000)</i></h3>
+			<div class="detail">
+				<p>Commentaires sur le contenu</p>
+			</div>
+
+			<h3 class="api"><a name="access_id" id="access_id">access_id</a> : type <i>int</i></h3>
+			<div class="detail">
+				<p></p>
+			</div>
+
+			<h3 class="api"><a name="startDate" id="startDate">startDate</a> : type <i>date(dd/mm/yyy)</i></h3>
+			<div class="detail">
+				<p>Date d'ouverture aux utilisateurs</p>
+			</div>
+
+			<h3 class="api"><a name="endDate" id="endDate">endDate</a> : type <i>date(dd/mm/yyy)</i></h3>
+			<div class="detail">
+				<p>Date de fin d'accès aux utilisateurs</p>
+			</div>
+
+			<h3 class="api"><a name="creationDate" id="creationDate">creationDate</a> : type <i>date(dd/mm/yyy)</i></h3>
+			<div class="detail">
+				<p>Date de création du contenu</p>
+			</div>
+
+			<h3 class="api"><a name="interactive" id="interactive">interactive</a> : type <i>flag</i></h3>
+			<div class="detail">
+				<p>Si coché, l'utilisateur devra interagir avec les médias</p>
+			</div>
+
+
+
+
+<h2><a name="classVars" id="classVars">Variables de classe</a></h2>
+
+
+
+
+		<h2><a name="instanceMethods" id="instanceMethods">Méthodes d'instance</a></h2>
+		<h3 class="api"><a name="save" id="save">save(&lt;<i>$db</i>&gt;)</a></h3>
+		<div class="detail">
+			Enregistre en base de donn&eacute;es un nouvel enregistrement
+		</div>
+
+
+		<h3 class="api"><a name="update" id="update">update(&lt;<i>$db</i>&gt;)</a></h3>
+		<div class="detail">
+			Mise a jour des donn&eacute;es d'un enregistrement
+		</div>
+
+
+
+		<!--  -->
+		<h2><a name="classMethods" id="classMethods">Méthodes de classe</a></h2>
+
+		<h3 class="api"><a name="Content_modelFromRow" id="Content_modelFromRow">Content_modelFromRow(&lt;<i>$row</i>&gt;)</a></h3>
+		<div class="detail">
+			Cr&eacute;e une nouvelle instance &agrave; partir d'un enregistrement de base de donn&eacute;es
+		</div>
+
+		<h3 class="api"><a name="getAllContents" id="getAllContents">getAllContents(&lt;<i>$db</i>&gt;, &lt;<i>$orderBy = null</i>&gt;, &lt;<i>$asc = null</i>&gt;, &lt;<i>$limit = null</i>&gt;, &lt;<i>$offset = null</i>&gt;)</a></h3>
+		<div class="detail">
+			r&eacute;cup&egrave;re tous les enregistrements
+			<ul>
+				<li>$db : Base de donn&eacute;es</li>
+				<li>$orderBy : cl&eacute; de tri</li>
+				<li>$asc : 'asc' ou 'desc'. Par d&eacute;faut : 'asc'</li>
+				<li>$limit : nombre d'enregistrements limite</li>
+				<li>$offset : nombre d'enregistrements sauter avant de r&eacute;cup&eacute;rer le premier enregistrement</li>
+			</ul>
+		</div>
+
+		<h3 class="api"><a name="getCountContents()" id="getCountContents()">getCountContents(&lt;<i>$db</i>&gt;)</a></h3>
+		<div class="detail">
+			Compte le nombre d'enregistrements
+			<ul>
+				<li>$db : Base de donn&eacute;es</li>
+			</ul>
+		</div>
+		
+		<h3 class="api"><a name="getContent" id="getContent">getContent(&lt;<i>$db</i>&gt;, &lt;<i>$id</i>&gt;)</a></h3>
+		<div class="detail">
+			R&eacute;cup&egrave;re un objet par la cl&eacute; d'unicit&eacute;
+		</div>
+		
+		<h3 class="api"><a name="delete" id="delete">delete(&lt;<i>$db</i>&gt;, &lt;<i>$id</i>&gt;)</a></h3>
+		<div class="detail">
+			Supprime un objet par la cl&eacute; d'unicit&eacute;
+		</div>
+
+		<h3 class="api"><a name="getAllByCriteria" id="getAllByCriteria">getAllByCriteria(&lt;<i>$db</i>&gt;, &lt;<i>$criteriaArray</i>&gt;, &lt;<i>$orderBy = null</i>&gt;, &lt;<i>$asc = null</i>&gt;, &lt;<i>$limit = null</i>&gt;, &lt;<i>$offset = null</i>&gt;)</a></h3>
+		<div class="detail">
+			Récupère les objets selon les critères de sélection
+			<ul>
+				<li>$db : Base de donn&eacute;es</li>
+				<li>$criteriaArray : Liste de crit&egrave;res de s&eacute;lection</li>
+				<li>$orderBy : cl&eacute; de tri</li>
+				<li>$asc : 'asc' ou 'desc'. Par d&eacute;faut : 'asc'</li>
+				<li>$limit : nombre d'enregistrements limite</li>
+				<li>$offset : nombre d'enregistrements sauter avant de r&eacute;cup&eacute;rer le premier enregistrement</li>
+			</ul>
+		</div>
+
+		<h3 class="api"><a name="countByCriteria" id="countByCriteria">countByCriteria(&lt;<i>$db</i>&gt;, &lt;<i>$criteriaArray</i>&gt;)</a></h3>
+		<div class="detail">
+			Compte le nombre d'enregistrements selon les critères de sélection
+			<ul>
+				<li>$db : Base de donn&eacute;es</li>
+				<li>$criteriaArray : Liste de critères de sélection</li>
+			</ul>
+		</div>
+
+
+
+	
+		<h1><a name="Copyright" id="Copyright">Copyright</a></h1>
+	
+		<div class="detail">
+			<p>
+			&copy; by Julien CORON - 2013<br>
+			Copyright 2013 Julien CORON<br>
+			  <br>
+			  Licence :<br>
+			   Ce programme est un logiciel libre ; vous pouvez le redistribuer ou le 
+			   modifier suivant les termes de la GNU General Public License telle que 
+			   publiée par la Free Software Foundation ; soit la version 3 de la licence, 
+			   soit (à votre gré) toute version ultérieure.<br>
+			<br>
+			   Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE 
+			   GARANTIE ; pas même la garantie implicite de COMMERCIABILISABILITÉ ni 
+			   d'ADÉQUATION à UN OBJECTIF PARTICULIER. Consultez la GNU General Public 
+			   License pour plus de détails.<br>
+			 <br>
+			  <br>
+			   This program is free software: you can redistribute it and/or modify
+			    it under the terms of the GNU General Public License as published by
+			    the Free Software Foundation, either version 3 of the License, or
+			    (at your option) any later version.<br>
+			<br>
+			    This program is distributed in the hope that it will be useful,
+			    but WITHOUT ANY WARRANTY; without even the implied warranty of
+			    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+			    GNU General Public License for more details.<br>
+			<br>
+			    You should have received a copy of the GNU General Public License
+			    along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
+			</p>
+		</div> <!-- .detail -->
+
+	</div>
+</div>
+
+
+</body>
+</html>

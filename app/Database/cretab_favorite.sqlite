@@ -1,0 +1,14 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_favorite.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE favorite (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	user_id integer NOT NULL , 
+	success_id integer NOT NULL , 
+	add_date date NOT NULL 
+);
+
+
+

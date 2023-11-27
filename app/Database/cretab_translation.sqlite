@@ -1,0 +1,17 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_translation.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE translate (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	element_id integer NOT NULL , 
+	lang_id integer NOT NULL , 
+	html text(4000) , 
+	alt varchar(255) , 
+	title varchar(255) , 
+	src varchar(4000) 
+);
+
+
+

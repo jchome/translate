@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object shortName="user" displayName="Utilisateur" obName="User">
+	<description>Utilisateur de l'application</description>
+	<attribute id="id" name="identifiant" nullable="NO" isKey="YES" autoincrement="YES" type="int" >
+		<description>Identifiant système</description>
+	</attribute>
+	<attribute id="login" name="login" nullable="NO" type="varchar(255)" >
+		<description>Login de l'utilisateur</description>
+	</attribute>
+	<attribute id="password" name="mot de passe" nullable="NO" type="password(255)" >
+		<description>Mot de passe de connexion</description>
+	</attribute>
+	<attribute id="name" name="nom" nullable="YES" type="varchar(255)" >
+		<description>Nom de l'utilisateur</description>
+	</attribute>
+	<attribute id="profile" name="Profil" nullable="NO" type="ENUM('ADMIN':'Administrateur', 'WEBMASTER':'WebMaster')" >
+		<description>Profil applicatif de l'utilisateur</description>
+	</attribute>
+</object>

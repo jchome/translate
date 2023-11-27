@@ -1,0 +1,15 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_category.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE category (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	title varchar(255) NOT NULL , 
+	code varchar(255) , 
+	preview varchar(4000) NOT NULL , 
+	archived char(1) NOT NULL 
+);
+
+
+

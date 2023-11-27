@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object shortName="lang" displayName="Langue" obName="Language">
+	<description>Langue de traduction</description>
+	<attribute id="id" name="identifiant" nullable="NO" isKey="YES" autoincrement="YES" type="int" >
+		<description>Identifiant système</description>
+	</attribute>
+	<attribute id="label" name="libellé" nullable="NO" type="varchar(255)" >
+		<description>Nom de la langue</description>
+	</attribute>
+	<attribute id="code" name="code" nullable="NO" type="varchar(2)" >
+		<description>Code sur 2 caractères</description>
+	</attribute>
+	<attribute id="flag" name="drapeau" nullable="YES" type="file" >
+		<description>Image du drapeau</description>
+	</attribute>
+</object>

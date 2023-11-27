@@ -1,0 +1,13 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_evaluation.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE evaluation (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	content_origin_id integer NOT NULL , 
+	message text(4000) 
+);
+
+
+

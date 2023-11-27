@@ -1,0 +1,15 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_subscription.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE subscription (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	user_id integer NOT NULL , 
+	access_id integer NOT NULL , 
+	startDate date NOT NULL , 
+	endDate date NOT NULL 
+);
+
+
+

@@ -1,0 +1,14 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_element.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE element (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	name varchar(255) NOT NULL , 
+	selector varchar(4000) NOT NULL , 
+	page_id integer NOT NULL 
+);
+
+
+

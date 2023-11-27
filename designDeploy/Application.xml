@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object shortName="app" displayName="Application" obName="App">
+	<description>Site web ou application nécessitant une traduction</description>
+	<attribute id="id" name="identifiant" nullable="NO" isKey="YES" autoincrement="YES" type="int" >
+		<description>Identifiant système</description>
+	</attribute>
+	<attribute id="name" name="nom" nullable="NO" type="varchar(255)" >
+		<description>Nom de l'application</description>
+	</attribute>
+	<attribute id="owner_id" name="propriétaire" nullable="NO" type="int" referencedObject="Utilisateur" access="default" display="name" >
+		<description>Lien vers l'utilisateur propriétaire de l'application</description>
+	</attribute>
+	<attribute id="server" name="serveur" nullable="YES" type="varchar(255)" >
+		<description>nom du serveur et port de l'application, pour contrôle de sécurité</description>
+	</attribute>
+</object>

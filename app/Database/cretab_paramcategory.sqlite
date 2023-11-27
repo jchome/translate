@@ -1,0 +1,14 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_paramcategory.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE param_category (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	title varchar(255) NOT NULL , 
+	category_id integer NOT NULL , 
+	type ENUM("Libre","Liste") NOT NULL 
+);
+
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object shortName="element" displayName="Element" obName="Element">
+	<description>Elément à traduire dans une page</description>
+	<attribute id="id" name="identifiant" nullable="NO" isKey="YES" autoincrement="YES" type="int" >
+		<description>Identifiant système</description>
+	</attribute>
+	<attribute id="name" name="nom" nullable="NO" type="varchar(255)" >
+		<description>Nom de l'élément</description>
+	</attribute>
+	<attribute id="selector" name="sélecteur" nullable="NO" type="varchar(4000)" >
+		<description>Sélecteur jQuery de l'objet à traduire</description>
+	</attribute>
+	<attribute id="page_id" name="page" nullable="NO" type="int" referencedObject="Page" access="default" display="label" >
+		<description>Lien vers la page</description>
+	</attribute>
+</object>

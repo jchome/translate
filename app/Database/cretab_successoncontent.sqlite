@@ -1,0 +1,19 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_successoncontent.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE success_content (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	user_id integer NOT NULL , 
+	content_id integer NOT NULL , 
+	quotation integer , 
+	dateRealization date , 
+	xp integer , 
+	gems integer , 
+	evaluation_answer_id integer , 
+	root_content_id integer NOT NULL 
+);
+
+
+

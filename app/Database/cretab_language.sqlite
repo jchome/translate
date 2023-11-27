@@ -1,0 +1,14 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_language.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE lang (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	label varchar(255) NOT NULL , 
+	code varchar(2) NOT NULL , 
+	flag varchar(4000) 
+);
+
+
+

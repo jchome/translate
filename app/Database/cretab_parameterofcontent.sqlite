@@ -1,0 +1,15 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_parameterofcontent.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE param_content (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	content_id integer NOT NULL , 
+	parameter_id integer NOT NULL , 
+	free_value varchar(255) , 
+	selected_value_id integer 
+);
+
+
+

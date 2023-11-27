@@ -1,0 +1,18 @@
+/*
+ * Lancer la commande suivante pour insérer les données
+ * cat cretab_subtitle.sqlite | sqlite3 test_database.sdb
+ */
+ 
+CREATE TABLE subtitle (
+	id integer NOT NULL PRIMARY KEY AUTOINCREMENT , 
+	text varchar(255) NOT NULL , 
+	position_x integer NOT NULL , 
+	position_y integer NOT NULL , 
+	startTime varchar(255) NOT NULL , 
+	endTime varchar(255) NOT NULL , 
+	media_id integer NOT NULL , 
+	cssClass varchar(255) 
+);
+
+
+
