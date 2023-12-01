@@ -117,6 +117,15 @@ class ListTranslationsJson extends \App\Controllers\BaseController {
 			'data' => $result
 		]);
 	}
+	public function findBy_href($href, $orderBy = null, $limit = 50, $offset = 0){
+		// recuperation des donnees
+		$translationModel = new \App\Models\TranslationModel();
+		$result = $translationModel->where('href', $href)->findAll($limit, $offset);
+		return $this->respond([
+			'status' => 'ok',
+			'data' => $result
+		]);
+	}
 
 
 
@@ -158,6 +167,17 @@ class ListTranslationsJson extends \App\Controllers\BaseController {
 		$db      = \Config\Database::connect();
 		$builder = $db->table('translate');
 		$builder->like('src', urldecode($src));
+
+		$data['translationCollection'] = $builder->get()->getResultArray();
+		return $this->respond([
+			'status' => 'ok',
+			'data' => $data
+		]);
+	}
+	public function findLike_href($href){
+		$db      = \Config\Database::connect();
+		$builder = $db->table('translate');
+		$builder->like('href', urldecode($href));
 
 		$data['translationCollection'] = $builder->get()->getResultArray();
 		return $this->respond([

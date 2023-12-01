@@ -91,7 +91,8 @@ class ImportTranslations extends \App\Controllers\BaseController {
 				$model->html = $data[2];
 				$model->alt = $data[3];
 				$model->title = $data[4];
-				$model->src = $data[5];	
+				$model->src = $data[5];
+				$model->href = $data[6];	
 				$model->save($this->db);
 				$dataProcessed[$ligneEnCours] = $model;
 				$ligneEnCours++;

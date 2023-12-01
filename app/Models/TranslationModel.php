@@ -29,6 +29,7 @@ class TranslationModel extends Model {
 		'alt', // Texte apparaissant à la place d'une image non trouvée
 		'title', // Texte apparaissant au survol par la souris
 		'src', // Lien http vers l'image traduite
+		'href', // Lien href de l'élément
 	];
     public static $empty = [
 	'id' => '',
@@ -37,7 +38,8 @@ class TranslationModel extends Model {
 		'html' => '',
 		'alt' => '',
 		'title' => '',
-		'src' => '',        
+		'src' => '',
+		'href' => '',        
     ];
 
 	/***************************************************************************

@@ -68,12 +68,20 @@
 							class=" sortDesc"
 						<?php }?>
 						><?= lang('generated/Translation.form.src.label') ?></a></th>
+					<th class="sortable"><!-- href -->
+						<a href="<?= base_url() ?>/Generated/translation/listtranslations/index/href/<?= ($orderBy == 'href'&& $asc == 'asc')?('desc'):('asc') ?>"
+						<?php if($orderBy == 'href'&& $asc == 'asc') {?>
+							class=" sortAsc"
+						<?php }else if($orderBy == 'href'&& $asc == 'desc') {?>
+							class=" sortDesc"
+						<?php }?>
+						><?= lang('generated/Translation.form.href.label') ?></a></th>
 					<th><?= lang('App.object.tableheader.actions') ?></th>
 				</tr>
 			</thead>
 			<tbody>
 <?php
-$enum_src = array();
+$enum_href = array();
 foreach($translations as $translation):
 
 ?>
@@ -87,6 +95,7 @@ foreach($translations as $translation):
 				<td valign="top"><?=$translation['alt']?></td>
 				<td valign="top"><?=$translation['title']?></td>
 				<td valign="top"><?=$translation['src']?></td>
+				<td valign="top"><?=$translation['href']?></td>
 					<td>
 						<a class="btn btn-secondary" 
 							href="<?= base_url() ?>/Generated/translation/edittranslation/index/<?=$translation['id']?>" 

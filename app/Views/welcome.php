@@ -17,55 +17,50 @@
 
 </head>
 
-<body style="padding-top: 70px;">
+<body class="login">
+
+<?php if (session()->getFlashdata('error')) : ?>
+    <div class="row text-center">
+        <div class="col-md-12 alert alert-danger" role="alert">
+            <?= session()->getFlashdata('error') ?>
+            <?= service('validation')->listErrors('errors_list') ?>
+            <br />
+        </div>
+    </div>
+<?php endif ?>
 
     <section>
         <div class="container">
 
             <div class="row justify-content-center">
-                <div class="col-md-12 col-lg-10">
 
-                    <?php if (session()->getFlashdata('error')) : ?>
-                        <div class="row text-center">
-                            <div class="col-md-12 alert alert-danger" role="alert">
-                                <?= session()->getFlashdata('error') ?>
-                                <?= service('validation')->listErrors('errors_list') ?>
-                                <br />
+                <div class="card p-0" style="width: 26rem;">
+                    <div class="card-header">
+                        <h5><?= lang('App.message.welcome') ?></h5>
+                    </div>
+
+                    <div class="card-body">
+                        <form action="<?= base_url() ?>/welcome/index" name="signin" id="signin" class="signin-form" method="POST">
+                            <input type="hidden" name="formSend" value="true" />
+                            <?= csrf_field() ?>
+                            <div class="form-group mb-3">
+                                <label class="label" for="login"><?= lang('App.message.type_your_id') ?></label>
+                                <input type="text" class="form-control" placeholder="<?= lang('App.form.id') ?>" value="" id="login" name="login" required>
                             </div>
-                        </div>
-                    <?php endif ?>
-
-                    <div class="wrap d-md-flex">
-                        <div class="login-wrap p-4 p-md-5">
-                            <div class="d-flex">
-                                <div class="w-100">
-                                    <h3 class="mb-4"><?= lang('App.message.welcome') ?></h3>
-                                </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="password"><?= lang('App.message.type_your_password') ?></label>
+                                <input type="password" class="form-control" placeholder="<?= lang('App.form.password') ?>" name="password" id="password" required>
                             </div>
-                            <form action="<?= base_url() ?>/welcome/index" name="signin" id="signin" class="signin-form" method="POST">
-                                <input type="hidden" name="formSend" value="true" />
-                                <?= csrf_field() ?>
-                                <div class="form-group mb-3">
-                                    <label class="label" for="login"><?= lang('App.message.type_your_id') ?></label>
-                                    <input type="text" class="form-control" placeholder="<?= lang('App.form.id') ?>" value="" id="login" name="login" required>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label class="label" for="password"><?= lang('App.message.type_your_password') ?></label>
-                                    <input type="password" class="form-control" placeholder="<?= lang('App.form.password') ?>" name="password" id="password" required>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3"><?= lang('App.form.connect') ?></button>
-                                </div>
-                                <div class="form-group d-md-flex">
-                                    <div class="w-100 text-md-right forgotpassword text-right">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"><?= lang('App.form.forgotPassword') ?></a>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
+                            <div class="text-center mt-5">
+                                <button type="submit" class="btn btn-primary rounded submit px-3"><?= lang('App.form.connect') ?></button>
+                            </div>
+                            <div class="d-flex justify-content-end forgotpassword">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"><?= lang('App.form.forgotPassword') ?></a>
+                            </div>
+                        </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

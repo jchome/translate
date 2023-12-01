@@ -66,25 +66,12 @@ class Welcome extends HtmlController {
 				$session->setFlashdata('error', 'Identifiant ['.$login.'] ou mot de passe incorrect...');
 				return $this->view('welcome', $data, "Welcome");
 			}
-			/*
-			if($user['profile'] != 'ADMIN'){
-				$data['message'] = 'Utilisateur ['.$login.'] n est pas ADMIN...';
-				log_message('debug','[Login.php] : user is not ADMIN');
-				$session->setFlashdata('error', 'Utilisateur ['.$login.'] n est pas ADMIN...');
-				return $this->view('welcome', $data, "Welcome");
-			}*/
 			$session->set('user_id', $user['id']);
 			$session->set('currentUser', (object)$user);
 			log_message('debug','[welcome.php] : user connected: '. $login);
 			log_message('debug','[welcome.php] session/userid = ' . $session->get('user_id'));
 
 			// Add the token for the user
-			/*
-			$ipAddress = ""; //$this->request->getIPAddress();
-			$user['token'] = generateToken($user['id'], $ipAddress);
-			$session->set('user_token', $user['token']);
-			$this->userModel->update($user['id'], $user);
-			*/
 			if($user['profile'] == 'ADMIN'){
 				return redirect()->to('Generated/User/listusers/index');
 			}else{

@@ -92,6 +92,15 @@ echo form_open_multipart('Generated/translation/createtranslationjson/add', $att
 			<span class="help-block valtype"><?= lang('generated/translation.form.src.description')?></span>
 		</div>
 	</div>
+	
+	<div class="control-group"> <!-- href : lien -->
+		<label class="control-label" for="href">
+			<?= lang('generated/translation.form.href.label') ?> :
+		</label>
+		<div class="controls"><input class="input-xlarge valtype form-control" type="text" name="href" id="href"  >
+			<span class="help-block valtype"><?= lang('generated/translation.form.href.description')?></span>
+		</div>
+	</div>
 
 		<hr>
 		<div class="row">

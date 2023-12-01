@@ -33,6 +33,7 @@ class CreateTranslationJson extends \App\Controllers\AjaxController {
 		if (! $this->validate([
 			'element_id' => 'trim|required',
 			'lang_id' => 'trim|required',
+
 		])) {
 			$data = $this->getData();
 			$data['validation'] = $this->validator;
@@ -51,6 +52,7 @@ class CreateTranslationJson extends \App\Controllers\AjaxController {
 			'alt' => $this->request->getPost('alt'),
 			'title' => $this->request->getPost('title'),
 			'src' => $this->request->getPost('src'),
+			'href' => $this->request->getPost('href'),
 
 		];
 
@@ -66,6 +68,9 @@ class CreateTranslationJson extends \App\Controllers\AjaxController {
 		}
 		if($data['src'] == ""){
 			$data['src'] = null;
+		}
+		if($data['href'] == ""){
+			$data['href'] = null;
 		}
 		$translationModel = new \App\Models\TranslationModel();
 		

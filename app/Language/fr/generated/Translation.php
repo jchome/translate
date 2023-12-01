@@ -28,5 +28,7 @@ return [
 	'form.title.description' => "Texte apparaissant au survol par la souris",
 	'form.src.label' => "source d'image",
 	'form.src.description' => "Lien http vers l'image traduite",
+	'form.href.label' => "lien",
+	'form.href.description' => "Lien href de l'élément",
 
 ];

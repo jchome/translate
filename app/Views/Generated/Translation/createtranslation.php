@@ -111,6 +111,19 @@ echo form_open_multipart('Generated/translation/createtranslation/add', 'class="
 		
 	</div>
 
+	<div class="row mb-3"><!-- lien : Lien href de l'élément -->
+		<label for="href" class="col-2 col-form-label"><?= lang('generated/Translation.form.href.label') ?>
+		</label>
+		<div class="col-10">
+			<input class="form-control" type="text" name="href" 
+				aria-describedby="hrefHelp" id="href"  >
+			<span id="hrefHelp" class="form-text">
+				<?= lang('generated/Translation.form.href.description')?>
+			</span>
+		</div>
+		
+	</div>
+
 		<hr>
 		<div class="row">
 			<div class="d-flex justify-content-around">

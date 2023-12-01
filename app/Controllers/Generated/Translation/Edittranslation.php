@@ -38,12 +38,13 @@ class EditTranslation extends \App\Controllers\HtmlController {
 		$validation =  \Config\Services::validation();
 		
 		if (! $this->validate([
-			'element_id' => 'trim|required',
+'element_id' => 'trim|required',
 			'lang_id' => 'trim|required',
 			'html' => 'trim',
 			'alt' => 'trim',
 			'title' => 'trim',
 			'src' => 'trim',
+			'href' => 'trim',
 		])) {
 			log_message('debug','[Edittranslation.php] : Error in the form !');
 			session()->setFlashData('error', $validation->listErrors());
@@ -57,6 +58,7 @@ class EditTranslation extends \App\Controllers\HtmlController {
 		$oldModel = $translationModel->find($key);
 
 		$data = [
+
 			'id' => $this->request->getPost('id'),
 			'element_id' => $this->request->getPost('element_id'),
 			'lang_id' => $this->request->getPost('lang_id'),
@@ -64,6 +66,7 @@ class EditTranslation extends \App\Controllers\HtmlController {
 			'alt' => $this->request->getPost('alt'),
 			'title' => $this->request->getPost('title'),
 			'src' => $this->request->getPost('src'),
+			'href' => $this->request->getPost('href'),
 		];
 
 		if($data['html'] == ""){
@@ -77,6 +80,9 @@ class EditTranslation extends \App\Controllers\HtmlController {
 		}
 		if($data['src'] == ""){
 			$data['src'] = null;
+		}
+		if($data['href'] == ""){
+			$data['href'] = null;
 		}
 
 		$translationModel->update($key, $data);

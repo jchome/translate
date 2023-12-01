@@ -22,4 +22,7 @@
 	<attribute id="src" name="source d'image" nullable="YES" type="varchar(4000)" >
 		<description>Lien http vers l'image traduite</description>
 	</attribute>
+	<attribute id="href" name="lien" nullable="YES" type="varchar(4000)" >
+		<description>Lien href de l'élément</description>
+	</attribute>
 </object>

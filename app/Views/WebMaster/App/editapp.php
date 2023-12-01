@@ -18,6 +18,7 @@
 
 			<form>
 				<input type="hidden" id="app_id" value="<?= $app->id ?>"/>
+				<input type="hidden" id="app_server" value="<?= $app->server ?>"/>
 
 				<!-- list of variables - auto-generated : -->
 
@@ -74,7 +75,7 @@
 			<input type="hidden" id="translationId" value="">
 			<div class="modal-header">
 				<h1 class="modal-title fs-5" id="editModalLabel">
-					Modifier la traduction de "<span id="elementName"></span>"
+					Modifier la traduction de "<span id="elementName"></span>" pour la langue "<span id="langName"></span>"
 				</h1>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
@@ -90,10 +91,10 @@
 				</div>
 				<div class="row mb-2">
 					<div class="col-2">
-						<label for="elementSelector">Sélecteur</label>
+						<label for="translationHref">Lien</label>
 					</div>
 					<div class="col-4">
-						<input type="text" class="form-control" id="elementSelector">
+						<input type="text" class="form-control" id="translationHref">
 					</div>
 					<div class="col-2">
 						<label for="translationAlt">Texte alternatif</label>
@@ -117,9 +118,19 @@
 					</div>
 				</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-				<button type="button" class="btn btn-primary" onclick="applyTranslation()">Appliquer</button>
+			<div class="modal-footer justify-content-between">
+				<div class="flex-fill row">
+					<div class="col-2">
+						<label for="elementSelector">Sélecteur</label>
+					</div>
+					<div class="col-6">
+						<input type="text" class="form-control" id="elementSelector">
+					</div>
+				</div>
+				<div class="buttons">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+					<button type="button" class="btn btn-primary" onclick="applyTranslation()">Appliquer</button>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -8,8 +8,11 @@
 	float: left;
 }
 
-#login-bg{
-	background-color: #ccc;
+body.login{
+	padding-top: 70px; 
+	background-image: url('../img/background.jpg');
+	background-position: center;
+	background-size: cover;
 }
 
 .login-holder{

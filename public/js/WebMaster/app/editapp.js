@@ -84,9 +84,6 @@ function templatePage(pageObject){
                         <button class="btn btn-primary btn-sm" onclick="addTranslation(${pageObject.id})">
                             Ajouter une traduction dans la page
                         </button>
-                        <button class="btn btn-primary btn-sm" onclick="generateJson('${pageObject.path}')">
-                            Générer le fichier json
-                        </button>
                     </th>
                 </tr>
             </tfoot>
@@ -105,7 +102,8 @@ function templateElement(elementObject, pageId){
             "html": "<p>Home wellness services that will change your life</p>",
             "alt": null,
             "title": null,
-            "src": null
+            "src": null,
+            "href": null
         }
     */
     if(elementObject.html == null){
@@ -119,6 +117,9 @@ function templateElement(elementObject, pageId){
     }
     if(elementObject.src == null){
         elementObject.src = "";
+    }
+    if(elementObject.href == null){
+        elementObject.href = "";
     }
 
     var templateBtnDelete = `<button class="btn btn-sm btn-danger" 
@@ -205,12 +206,14 @@ function openCreateTranslation(elementId){
 }
 
 function openEdit(element_id, translate_id){
-
+    const langId = $('#langId').val();
+    const langName = $('#langId option[value='+langId+']').html();
     getElement(element_id).then((json) => {
         $('#elementSelector').empty()
         if(json.status == "ok"){
             $('#elementSelector').val(json.data.selector);
             $('#elementName').html(json.data.name);
+            $('#langName').html(langName);
             $('#elementId').val(json.data.id);
             $('#pageId').val(json.data.page_id);
         }
@@ -225,6 +228,7 @@ function openEdit(element_id, translate_id){
             $('#translationAlt').val(json.data.alt);
             $('#translationTitle').val(json.data.title);
             $('#translationSrc').val(json.data.src);
+            $('#translationHref').val(json.data.href);
         }
     });
 
@@ -269,7 +273,8 @@ function applyTranslation(){
         html: document.querySelector("trix-editor").value,
         alt: $('#translationAlt').val(),
         title: $('#translationTitle').val(),
-        src: $('#translationSrc').val()
+        src: $('#translationSrc').val(),
+        href: $('#translationHref').val()
     };
     const dataElement = {
         id: $('#elementId').val(),
@@ -332,19 +337,5 @@ function deleteTranslate(translateId, pageId) {
                 resolve(data);
             },
         });
-    });
-}
-
-function generateJson(pagePath){
-    const appId = $('#app_id').val();
-    const langId = $('#langId').val();
-    const langCode = $('#langId option[value='+langId+']').data('code'); 
-    $.ajax({
-        url: base_url() + "WebMaster/App/AppAjax/getJson/" + appId + "?lang=" + langCode + "&path=" + pagePath,
-        method: "GET",
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        success: function (data) {
-            console.log(data);
-        },
     });
 }

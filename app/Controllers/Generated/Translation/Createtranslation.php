@@ -52,6 +52,7 @@ class CreateTranslation extends \App\Controllers\HtmlController {
 	'alt' => 'trim',
 	'title' => 'trim',
 	'src' => 'trim',
+	'href' => 'trim',
 		])) {
 			$data = $this->getData();
 			$data['validation'] = $this->validator;
@@ -68,6 +69,7 @@ class CreateTranslation extends \App\Controllers\HtmlController {
 			'alt' => $this->request->getPost('alt'),
 			'title' => $this->request->getPost('title'),
 			'src' => $this->request->getPost('src'),
+			'href' => $this->request->getPost('href'),
 		];
 
 
@@ -82,6 +84,9 @@ class CreateTranslation extends \App\Controllers\HtmlController {
 		}
 		if($data['src'] == ""){
 			$data['src'] = null;
+		}
+		if($data['href'] == ""){
+			$data['href'] = null;
 		}
 		$translationModel = new \App\Models\TranslationModel();
 		

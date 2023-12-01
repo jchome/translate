@@ -12,7 +12,8 @@ CREATE TABLE `translate` (
 	`html` text(4000) COMMENT 'texte', 
 	`alt` varchar(255) COMMENT 'texte alternatif', 
 	`title` varchar(255) COMMENT 'texte survol', 
-	`src` varchar(4000) COMMENT 'source d\'image' ,
+	`src` varchar(4000) COMMENT 'source d\'image', 
+	`href` varchar(4000) COMMENT 'lien' ,
 	PRIMARY KEY (id) 
 );
 

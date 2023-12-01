@@ -10,7 +10,8 @@ CREATE TABLE translate (
 	html text(4000) , 
 	alt varchar(255) , 
 	title varchar(255) , 
-	src varchar(4000) 
+	src varchar(4000) , 
+	href varchar(4000) 
 );
 
 

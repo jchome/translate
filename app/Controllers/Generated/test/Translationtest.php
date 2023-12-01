@@ -50,6 +50,7 @@ class TranslationTest extends Toast {
 		$translation_insert->alt = 'test_0';
 		$translation_insert->title = 'test_0';
 		$translation_insert->src = 'test_0';
+		$translation_insert->href = 'test_0';
 		$this->translationservice->insertNew($this->db, $translation_insert);
 		// $translation_insert->id est maintenant affecté
 	
@@ -71,6 +72,7 @@ class TranslationTest extends Toast {
 		$translation_insert->alt = 'test_0';
 		$translation_insert->title = 'test_0';
 		$translation_insert->src = 'test_0';
+		$translation_insert->href = 'test_0';
 		$this->translationservice->insertNew($this->db, $translation_insert);
 	
 		$translation_update = $this->translationservice->getUnique($this->db, $translation_insert->id);
@@ -81,6 +83,7 @@ class TranslationTest extends Toast {
 		$translation_update->alt = 'test1_0';
 		$translation_update->title = 'test1_0';
 		$translation_update->src = 'test1_0';
+		$translation_update->href = 'test1_0';
 		$this->translationservice->update($this->db, $translation_insert);
 	
 		$translation_update = $this->translationservice->getUnique($this->db, $translation_insert->id);
@@ -106,6 +109,9 @@ class TranslationTest extends Toast {
 		if(!$this->_assert_equals($translation_insert->src, $translation_update->src)) {
 			return false;
 		}
+		if(!$this->_assert_equals($translation_insert->href, $translation_update->href)) {
+			return false;
+		}
 
 		$this->translationservice->deleteByKey($this->db, $translation_insert->id);
 	}
@@ -126,6 +132,7 @@ class TranslationTest extends Toast {
 		$translation->alt = 'test_0';
 		$translation->title = 'test_0';
 		$translation->src = 'test_0';
+		$translation->href = 'test_0';
 		$this->translationservice->insertNew($this->db, $translation);
 	
 		// comptage pour vérification : après insertion
@@ -158,6 +165,7 @@ class TranslationTest extends Toast {
 		$translation_insert->alt = 'test_0';
 		$translation_insert->title = 'test_0';
 		$translation_insert->src = 'test_0';
+		$translation_insert->href = 'test_0';
 		$this->translationservice->insertNew($this->db, $translation_insert);
 	
 		$translations = $this->translationservice->getAll($this->db);
@@ -173,7 +181,8 @@ class TranslationTest extends Toast {
 					$this->_assert_equals($translation->html, $translation_insert->html ) && 
 					$this->_assert_equals($translation->alt, $translation_insert->alt ) && 
 					$this->_assert_equals($translation->title, $translation_insert->title ) && 
-					$this->_assert_equals($translation->src, $translation_insert->src )
+					$this->_assert_equals($translation->src, $translation_insert->src ) && 
+					$this->_assert_equals($translation->href, $translation_insert->href )
 				){
 				$found++;
 			}
