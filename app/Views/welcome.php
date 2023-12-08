@@ -11,8 +11,8 @@
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/custom.css" />
+    <!-- Custom CSS - ->
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/custom.css" / -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/main-back.css" />
 
 </head>
@@ -34,7 +34,7 @@
 
             <div class="row justify-content-center">
 
-                <div class="card p-0" style="width: 26rem;">
+                <div class="card p-0 col-10 col-md-8 col-lg-6 col-xl-4" style0="width: 26rem;">
                     <div class="card-header">
                         <h5><?= lang('App.message.welcome') ?></h5>
                     </div>
