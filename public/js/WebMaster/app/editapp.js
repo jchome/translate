@@ -1,6 +1,7 @@
+var editor; // Jodit editor
+
 $( document ).ready(function() {
     getPages( $('#app_id').val() );
-    const editor = Jodit.make('#editor');
 });
 
 
@@ -222,6 +223,14 @@ function openEdit(element_id, translate_id){
     
     getTranslation(translate_id).then((json) => {
         if(json.status == "ok"){
+            // Remove first "<div>", and last "</div>"
+            if(json.data.html.indexOf('<div>') == 0){
+                json.data.html = json.data.html.substring(5);
+            }
+            if(json.data.html.lastIndexOf('</div>') != -1){
+                json.data.html = json.data.html.substring(0, json.data.html.lastIndexOf('</div>'));
+            }
+            editor = Jodit.make('#editor');
             editor.value = json.data.html;
 
             $('#translationId').val(json.data.id);
