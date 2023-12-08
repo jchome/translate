@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     getPages( $('#app_id').val() );
+    const editor = Jodit.make('#editor');
 });
 
 
@@ -221,8 +222,8 @@ function openEdit(element_id, translate_id){
     
     getTranslation(translate_id).then((json) => {
         if(json.status == "ok"){
-            const editor = document.querySelector("trix-editor").editor;
-            editor.loadHTML(json.data.html);
+            editor.value = json.data.html;
+
             $('#translationId').val(json.data.id);
             $('#translationHtml').val(json.data.html);
             $('#translationAlt').val(json.data.alt);
@@ -235,6 +236,22 @@ function openEdit(element_id, translate_id){
     // Open the modal
     const modal = new bootstrap.Modal('#editModal', {});
     modal.show();
+}
+
+function changeElementName() {
+    const elementId = $('#elementId').val();
+
+    const elementName = prompt("Nom de l'élément : ", $('#elementName').html());
+    if(elementName === ""){
+        return;
+    }
+    getElement(elementId).then((json) => {
+        json.data.name = elementName;
+        saveElement(json.data).then( (updatedElement)=>{
+            $('#elementName').html(updatedElement.data.name);
+        });
+    });
+
 }
 
 function saveElement(dataElement){
@@ -270,7 +287,7 @@ function applyTranslation(){
         id: $('#translationId').val(),
         element_id: $('#elementId').val(),
         lang_id: $('#langId').val(),
-        html: document.querySelector("trix-editor").value,
+        html: editor.value,
         alt: $('#translationAlt').val(),
         title: $('#translationTitle').val(),
         src: $('#translationSrc').val(),

@@ -68,14 +68,14 @@
 
 <!-- MODAL Edit translation -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-xl">
+	<div class="modal-dialog modal-fullscreen">
 		<div class="modal-content">
 			<input type="hidden" id="elementId" value="">
 			<input type="hidden" id="pageId" value="">
 			<input type="hidden" id="translationId" value="">
 			<div class="modal-header">
 				<h1 class="modal-title fs-5" id="editModalLabel">
-					Modifier la traduction de "<span id="elementName"></span>" pour la langue "<span id="langName"></span>"
+					Modifier la traduction de "<span id="elementName" onclick="changeElementName()"></span>" pour la langue "<span id="langName"></span>"
 				</h1>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
@@ -85,7 +85,7 @@
 						<label for="translationHtml">Contenu</label>
 					</div>
 					<div class="col-10">
-						<trix-editor class="form-control" input="translationHtml"></trix-editor>
+						<textarea id="editor"></textarea>
 						<input id="translationHtml" type="hidden" name="content">
 					</div>
 				</div>

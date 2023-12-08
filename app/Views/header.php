@@ -46,9 +46,8 @@ $currentUser = session()->get('currentUser');
     <!-- Typeahead -->
     <script src="<?= base_url() ?>/assets/js/bootstrap-typeahead.js"></script>
 
-    <!-- Trix Rich Text Editor -->
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
-
+    <!-- Jodit -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.24.9/jodit.min.css"/>
 </head>
 
 <body>
